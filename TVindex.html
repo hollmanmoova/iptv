@@ -16,7 +16,7 @@
     var video = document.getElementById('video');
     if (Hls.isSupported()) {
         var hls = new Hls();
-        hls.loadSource('https://964591348103.ngrok-free.app/hls/123456.m3u8');
+        hls.loadSource('https://46c5a83e06c5.ngrok-free.app/hls/123456.m3u8');
         hls.attachMedia(video);
     } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
         video.src = 'https://964591348103.ngrok-free.app/hls/123456.m3u8';
