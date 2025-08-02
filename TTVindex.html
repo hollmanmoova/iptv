@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Streaming IPTV en Vivo</title>
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+</head>
+<body style="background-color:#111; color:white; font-family:sans-serif; text-align:center;">
+  <h1 style="margin-top: 30px;">📺 latino 4k (HLS)</h1>
+
+  <video id="video" width="720" controls autoplay style="border: 2px solid white; border-radius: 10px;"></video>
+
+  <p style="margin-top: 20px;">Transmisión en vivo desde ngrok</p>
+
+  <script>
+    var video = document.getElementById('video');
+    if (Hls.isSupported()) {
+        var hls = new Hls();
+        hls.loadSource('https:///2b17350d9b0d.ngrok-free.app/hls/123456.m3u8');
+        hls.attachMedia(video);
+    } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+        video.src = 'https:///2b17350d9b0d.ngrok-free.app/hls/123456.m3u8';
+    }
+  </script>
+</body>
+</html>
